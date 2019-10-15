@@ -1,0 +1,16 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+<div class="post-entry">
+    <h4>{{ post.title }}</h4>
+    <small>By -{{ post.author }}</small>
+    <br><br>
+    <p>{{post.content}}</p>
+    <br>
+
+    <a href="{% url 'update_post' object.pk %}">+ Update Post</a>
+    <a href="{% url 'delete_post' object.pk %}">- Delete Post</a>
+
+
+</div>
+{% endblock content %}
